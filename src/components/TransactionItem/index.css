@@ -1,0 +1,27 @@
+.border-top {
+  border-top: none;
+}
+
+.amount-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.type {
+  margin: 0;
+}
+.delete-img {
+  width: 20px;
+  height: 20px;
+}
+.delete-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.transaction-history-heading {
+  width: 25%;
+  margin: 0;
+  margin-top: 3px;
+}
