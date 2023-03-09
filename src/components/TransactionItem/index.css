@@ -1,15 +1,13 @@
+/* * {
+  border: 1px solid blue;
+} */
 .border-top {
   border-top: none;
 }
 
-.amount-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 1;
-}
 .type {
   margin: 0;
+  font-size: 14px;
 }
 .delete-img {
   width: 20px;
@@ -19,9 +17,11 @@
   border: none;
   outline: none;
   background-color: transparent;
+  margin-inline-start: 5%;
 }
 .transaction-history-heading {
   width: 25%;
   margin: 0;
   margin-top: 3px;
+  font-size: 14px;
 }

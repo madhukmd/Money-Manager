@@ -15,6 +15,12 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
+
 .header-background-container {
   background: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
   background-size: 100% 100%;
@@ -67,7 +73,7 @@ span {
 }
 @media screen and (max-width: 768px) {
   .form {
-    width: 80%;
+    width: 100%;
     margin: auto;
   }
 }
@@ -118,7 +124,7 @@ span {
 
 @media screen and (max-width: 768px) {
   .Transaction-history-container {
-    width: 80%;
+    width: 100%;
     margin-left: 0;
     margin: auto;
     margin-top: 20px;

@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 768px) {
   .moneydetails-list {
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-bottom: 20px;
     justify-content: space-evenly;

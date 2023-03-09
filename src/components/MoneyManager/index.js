@@ -20,7 +20,7 @@ class MoneyManager extends Component {
     historyItems: [],
     title: '',
     amount: '',
-    type: 'Income',
+    type: transactionTypeOptions[0].optionId,
     IncomeAmt: 0,
     ExpensesAmt: 0,
   }
@@ -39,12 +39,18 @@ class MoneyManager extends Component {
 
   addHistoryItem = event => {
     const {title, amount, type} = this.state
+
+    const optionObj = transactionTypeOptions.find(
+      eachTransaction => eachTransaction.optionId === type,
+    )
+    const {displayText} = optionObj
+
     event.preventDefault()
     const addHistoryItemList = {
       id: uuidv4(),
       title,
       amount,
-      type,
+      type: displayText,
     }
 
     this.setState(prevState => ({
@@ -53,12 +59,12 @@ class MoneyManager extends Component {
       amount: '',
     }))
 
-    if (type === 'Income') {
+    if (type === 'INCOME') {
       this.setState(prevState => ({
         IncomeAmt: prevState.IncomeAmt + parseInt(amount),
       }))
     }
-    if (type === 'Expenses') {
+    if (type === 'EXPENSES') {
       this.setState(prevState => ({
         ExpensesAmt: prevState.ExpensesAmt + parseInt(amount),
       }))
@@ -89,7 +95,14 @@ class MoneyManager extends Component {
   }
 
   render() {
-    const {historyItems, title, amount, IncomeAmt, ExpensesAmt} = this.state
+    const {
+      historyItems,
+      title,
+      amount,
+      IncomeAmt,
+      ExpensesAmt,
+      type,
+    } = this.state
     const balanceAmt = IncomeAmt - ExpensesAmt
     return (
       <div className="bg-container">
@@ -140,9 +153,13 @@ class MoneyManager extends Component {
                 TYPE
               </label>
               <br />
-              <select className="input" onChange={this.onChangeType}>
+              <select
+                className="input"
+                onChange={this.onChangeType}
+                value={type}
+              >
                 {transactionTypeOptions.map(eachItem => (
-                  <option key={eachItem.optionId} value={eachItem.displayText}>
+                  <option key={eachItem.optionId} value={eachItem.optionId}>
                     {eachItem.displayText}
                   </option>
                 ))}

@@ -14,18 +14,16 @@ const TransactionItem = props => {
   return (
     <li className="Transaction-header border-top">
       <p className="transaction-history-heading">{title}</p>
-      <p className="transaction-history-heading">Rs.{amount}</p>
-      <div className="amount-div">
-        <p className="type">{type}</p>
-        <button
-          type="button"
-          className="delete-button"
-          onClick={operation}
-          data-testid="delete"
-        >
-          <img src={Delete} alt="delete" className="delete-img" />
-        </button>
-      </div>
+      <p className="transaction-history-heading">Rs {amount}</p>
+      <p className="transaction-history-heading">{type}</p>
+      <button
+        type="button"
+        className="delete-button"
+        onClick={operation}
+        data-testid="delete"
+      >
+        <img src={Delete} alt="delete" className="delete-img" />
+      </button>
     </li>
   )
 }
